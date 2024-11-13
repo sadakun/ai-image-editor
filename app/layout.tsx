@@ -2,13 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
-import {
-  ClerkProvider,
-  RedirectToSignUp,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider, RedirectToSignIn, SignedOut } from "@clerk/nextjs";
 
 const IBMPlex = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -31,7 +25,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
           <SignedOut>
-            <RedirectToSignUp />
+            <RedirectToSignIn />
           </SignedOut>
 
           {children}
